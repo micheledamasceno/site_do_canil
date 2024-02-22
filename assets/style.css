@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Oswald:wght@200..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root {
+  --cor-primaria:  rgb(0, 44, 83)     /* Azul */
+  --cor-secundaria: rgb(242, 190, 75) /* Amarelo */
+  --cor-destaque: #000000;            /* Preto */
+  --cor-texto:rgb(255, 255, 255); /* Branca */
+}
+
+html {
+    height: 500vh;
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    max-width: 1280px; /* determina a largura dos container  */
+    margin: auto; /* centraliza o container  */
+  }
+ 
+  /* --------------  menu  ------------- */
+
+  /* configura toda parte do header */
+
+  header {
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+  }
+
+  /* manipulação de todo cabeçalho */
+
+  .flex { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+/* manipulação da imagem da logo no cabeçalho */
+
+  .navbar-logo img {
+    width: 120px; /* Largura desejada */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+ 
+  /* manipulação das ul e li dentro do menu */
+
+  header ul {
+      list-style-type: none; /* ? */
+  }
+  header ul li {
+      display: inline-block; /* ? */
+      margin: 0 5px;
+  }
+  header ul li a {
+    font-family: "Anta", sans-serif;
+    font-size: 20px;       /*tamanho da fonte do menu */
+    color: black      /*cor da fonte  menu */
+    text-decoration: none; /*tira o sublinhado do menu */
+  }
+
+
+  /*manipulação das ul e li dentro do submenu */
+  header ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header ul li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  header ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:rgba(255, 255, 255, 0.288); /* Cor de fundo do submenu */
+    padding: 0;
+  }
+  
+  header ul li:hover ul {
+    display: block;
+  }
+  
+  header ul li ul li {
+    display: block;
+    width: 100%;
+  }
+  
+  header ul li a {
+    display: block;
+    padding: 20px 25px; /* Espaçamento interno */
+    text-decoration: none;
+    color: black; /* Cor do texto do menu */
+  }
+  
+  header ul li ul li a {
+    padding: 10px 40px 0px 20px; /* Espaçamento interno do submenu */
+    margin-bottom: 20px;
+    color: black /* Cor do texto do submenu */
+  }
+
+/* manipulação da rolagem do menu */
+
+header.rolagem{
+  background-color: rgb(0, 44, 83) ; /*cor do fundo na rolagem */
+  padding: 20px 4%;
+}
+header.rolagem ul li ul{
+  background-color: rgb(0, 44, 83) ; /*cor do fundo na rolagem submenu*/
+}
+header.rolagem a {
+color:white;   /*cor da fonte na rolagem */
+}
+
+header.rolagem .navbar-logo img{
+   filter: invert(100%);      /* muda a cor da logo para um cor invertida */
+}
+
+/* manipulação do botão */
+
+.btn-contato button{
+  width: 200px;                          /*largura do botão */
+  height: 60px;                          /*altura do botão */
+  border: 0;                             /*tirar a borda do botão */
+  padding: 3px;
+  background-color:rgb(242, 190, 75);  /*cor do botão */
+  font-family: "Anta", sans-serif;       /*fonte dentro do botão */
+  color: white;           /*cor da fonte dentro do botão */
+  font-size: 20px;                       /*tamanho da fonte do botão */
+  cursor: pointer;
+  transition: .2s;
+  border-radius: 10px;                   /* Valor de arredondamento */
+}
+
+
+
+/* _________________ imagem de Fundo da pagina ________________*/
+
+.banner {
+  height: 100vh;
+  background-image: url('https://cdn.pixabay.com/photo/2016/02/26/16/32/bulldog-1224267_1280.jpg');
+  background-position: center center; /* centralizar a imagem */
+  background-repeat: no-repeat; /* não repetir */
+  background-size: cover; /* não repetir */
+  background-attachment: fixed;
+}
+
+.banner h1 {
+  font-family: "Anta", sans-serif;
+  font-size: 50px;
+  padding: 26% 26% 26% 40%;
+  color: rgb(235, 235, 235);
+}
+.banner h1 span{
+  font-family: "Anta", sans-serif;
+  color: rgb(0, 44, 83);
+}
+    
+
+/* style Rodape*/
+footer {
+  background-color: rgb(0, 44, 83);
+  width: 100%;
+  font-size: 0.8rem;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+    
+
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .menu-toggle.active + .menu {
+    display: block;
+  }
+  .submenu {
+    display: none;
+  }
+  .submenu.active {
+    display: block;
+  }
+}
